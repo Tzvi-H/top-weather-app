@@ -3,13 +3,21 @@ import {
   locationCell,
   conditionsCell,
   temperatureCell,
+  loadingDiv,
 } from "./dom_elements";
 import { getWeather, formatWeather } from "./weather_api";
 
 export const handleSubmit = async () => {
-  const weatherData = await getWeather(locationInput.value);
-  displayData(formatWeather(weatherData));
-  locationInput.value = "";
+  try {
+    loadingDiv.hidden = false;
+    const weatherData = await getWeather(locationInput.value);
+    displayData(formatWeather(weatherData));
+  } catch {
+    alert("invalid location");
+  } finally {
+    locationInput.value = "";
+    loadingDiv.hidden = true;
+  }
 };
 
 const displayData = (weatherData) => {

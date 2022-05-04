@@ -10,9 +10,14 @@
   <body>
     <h1>Weather App</h1>
 
+    <p>Enter a location to get the weather</p>
+
     <div>
       <input type="text" id="locationInput" />
       <button id="submit">get weather</button>
+    </div>
+    <div hidden="true" id="loading">
+      <span>loading...</span>
     </div>
     <div>
       <table>
