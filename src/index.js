@@ -1,4 +1,6 @@
 import "./style.css";
-import { getWeather, formatWeatherData } from "./weather_api";
 
-getWeather("seoul").then((data) => console.log(formatWeatherData(data)));
+import { submitButton } from "./dom_elements";
+import { handleSubmit } from "./dom_actions";
+
+submitButton.addEventListener("click", handleSubmit);

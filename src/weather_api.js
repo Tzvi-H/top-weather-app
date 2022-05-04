@@ -8,7 +8,7 @@ const getWeather = async (location) => {
   return data;
 };
 
-const formatWeatherData = (data) => {
+const formatWeather = (data) => {
   return {
     description: data.weather[0].description,
     tempFahrenheit: data.main.temp,
@@ -16,4 +16,4 @@ const formatWeatherData = (data) => {
   };
 };
 
-export { getWeather, formatWeatherData };
+export { getWeather, formatWeather };
