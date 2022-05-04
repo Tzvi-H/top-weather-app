@@ -4,3 +4,4 @@ export const locationCell = document.querySelector("#locationCell");
 export const conditionsCell = document.querySelector("#conditions");
 export const temperatureCell = document.querySelector("#temperature");
 export const loadingDiv = document.querySelector("#loading");
+export const locationImage = document.querySelector("#locationImage");
