@@ -1,8 +1,19 @@
-import { weatherInput } from "./dom_elements";
+import {
+  locationInput,
+  locationCell,
+  conditionsCell,
+  temperatureCell,
+} from "./dom_elements";
 import { getWeather, formatWeather } from "./weather_api";
 
 export const handleSubmit = async () => {
-  const weatherData = await getWeather(weatherInput.value);
-  console.log(formatWeather(weatherData));
-  weatherInput.value = "";
+  const weatherData = await getWeather(locationInput.value);
+  displayData(formatWeather(weatherData));
+  locationInput.value = "";
+};
+
+const displayData = (weatherData) => {
+  locationCell.textContent = weatherData.name;
+  conditionsCell.textContent = weatherData.description;
+  temperatureCell.textContent = weatherData.tempFahrenheit;
 };

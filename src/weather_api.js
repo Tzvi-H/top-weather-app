@@ -13,6 +13,7 @@ const formatWeather = (data) => {
     description: data.weather[0].description,
     tempFahrenheit: data.main.temp,
     tempCelsius: Number(((data.main.temp - 32) * (5 / 9)).toFixed(2)),
+    name: data.name,
   };
 };
 
